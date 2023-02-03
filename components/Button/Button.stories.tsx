@@ -27,7 +27,13 @@ export const Primary: Story = {
 };
 
 export const Secondary: Story = {
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole("button"));
+    await expect(args.onClick).toHaveBeenCalled();
+  },
   args: {
+    ...Primary.args,
     children: "Button",
   },
 };
