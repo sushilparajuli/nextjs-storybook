@@ -7,6 +7,9 @@ const meta: Meta<typeof Button> = {
   title: "Example/Button",
   component: Button,
   tags: ["docsPage"],
+  args: {
+    children: "Button",
+  },
 };
 
 export default meta;
@@ -20,21 +23,22 @@ export const Primary: Story = {
 };
 
 export const Secondary: Story = {
+  ...Primary,
   args: {
-    children: "Button",
+    color: "secondary",
   },
 };
 
-// export const Large: Story = {
-//   args: {
-//     size: "large",
-//     label: "Button",
-//   },
-// };
+export const WarningButton: Story = {
+  ...Primary,
+  args: {
+    color: "warning",
+  },
+};
 
-// export const Small: Story = {
-//   args: {
-//     size: "small",
-//     label: "Button",
-//   },
-// };
+export const DangerButton: Story = {
+  ...Primary,
+  args: {
+    color: "danger",
+  },
+};
