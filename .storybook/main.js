@@ -9,7 +9,8 @@ module.exports = {
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions"
+    "@storybook/addon-interactions",
+    "storybook-addon-next"
   ],
   "framework": {
     "name": "@storybook/nextjs",
@@ -18,4 +19,8 @@ module.exports = {
   "docs": {
     "docsPage": true
   },
+  "features": {
+    "emotionAlias": false,
+    "interactionsDebugger": true,
+  }
 }
