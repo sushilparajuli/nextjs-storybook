@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { expect } from "@storybook/jest";
-import { screen, userEvent, within } from "@storybook/testing-library";
+import { userEvent, within } from "@storybook/testing-library";
 
 import { Button } from "./Button";
 
@@ -9,9 +9,6 @@ const meta: Meta<typeof Button> = {
   title: "Example/Button",
   component: Button,
   tags: ["docsPage"],
-  args: {
-    children: "Button",
-  },
 };
 
 export default meta;
@@ -25,18 +22,15 @@ export const Primary: Story = {
     await expect(args.onClick).toHaveBeenCalled();
   },
   args: {
+    color: "primary",
     children: "Button",
   },
 };
 
 export const Secondary: Story = {
-  play: async ({ args, canvasElement }) => {
-    const canvas = within(canvasElement);
-    await userEvent.click(canvas.getByRole("button"));
-    await expect(args.onClick).toHaveBeenCalled();
-  },
+  ...Primary,
   args: {
-    ...Primary.args,
+    color: "secondary",
     children: "Button",
   },
 };
@@ -45,6 +39,7 @@ export const WarningButton: Story = {
   ...Primary,
   args: {
     color: "warning",
+    children: "Button",
   },
 };
 
@@ -52,5 +47,6 @@ export const DangerButton: Story = {
   ...Primary,
   args: {
     color: "danger",
+    children: "Button",
   },
 };
