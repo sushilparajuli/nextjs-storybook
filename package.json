@@ -30,9 +30,10 @@
     "@storybook/addon-interactions": "^7.0.0-beta.13",
     "@storybook/addon-links": "^7.0.0-beta.13",
     "@storybook/blocks": "^7.0.0-beta.13",
+    "@storybook/jest": "^0.0.10",
     "@storybook/nextjs": "^7.0.0-beta.13",
     "@storybook/react": "^7.0.0-beta.13",
-    "@storybook/testing-library": "^0.0.13",
+    "@storybook/testing-library": "^0.0.14-next.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "eslint-config-prettier": "^8.5.0",
@@ -41,5 +42,8 @@
     "jest-environment-jsdom": "^29.4.1",
     "storybook": "^7.0.0-beta.13",
     "storybook-addon-next": "^1.7.1"
+  },
+  "resolutions": {
+    "@storybook/instrumenter": "7.0.0-beta.13"
   }
 }
