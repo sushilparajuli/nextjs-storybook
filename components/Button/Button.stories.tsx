@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { expect } from "@storybook/jest";
+import { screen, userEvent, within } from "@storybook/testing-library";
 
 import { Button } from "./Button";
 
@@ -14,13 +16,24 @@ type Story = StoryObj<typeof Button>;
 
 // More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
 export const Primary: Story = {
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole("button"));
+    await expect(args.onClick).toHaveBeenCalled();
+  },
   args: {
     children: "Button",
   },
 };
 
 export const Secondary: Story = {
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole("button"));
+    await expect(args.onClick).toHaveBeenCalled();
+  },
   args: {
+    ...Primary.args,
     children: "Button",
   },
 };
