@@ -1,7 +1,7 @@
 
-import { ThemeProvider } from "@emotion/react";
+import { ThemeProvider, Global } from "@emotion/react";
 import { Themes } from "../styles/theme";
-
+import { GlobalStyles } from "../styles/global";
 
 const withThemeProvider = (Story, context) => {
   const background =
@@ -17,7 +17,14 @@ const withThemeProvider = (Story, context) => {
   );
 };
 
-export const decorators = [withThemeProvider];
+const withGlobalStyles = (Story, context) => (
+  <>
+    <Global styles={GlobalStyles} />
+    <Story {...context} />
+  </>
+)
+
+export const decorators = [withThemeProvider, withGlobalStyles];
 
 export const parameters = {
   backgrounds: {

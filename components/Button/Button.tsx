@@ -2,7 +2,7 @@ import { MouseEvent } from "react";
 import styled from "@emotion/styled";
 import { css, SerializedStyles } from "@emotion/react";
 import { AppTheme } from "@/styles/theme";
-
+import { boxShadow, transition } from "./styles";
 export type Color = "primary" | "secondary" | "danger" | "warning";
 
 export type Props = {
@@ -50,15 +50,15 @@ export const Button = styled.button<Props>`
   border-radius: 1rem;
   transition: all 0.4s ease;
   ${({ color, theme }) => getColors(theme, color)};
-  ${({ theme }) =>
-    `box-shadow: 0.5vmin 0.5vmin 1vmin ${theme.components.shadow1}, -0.5vmin -0.5vmin 1vmin${theme.components.shadow2};`};
-
   &:hover {
     opacity: 0.9;
   }
+  ${transition()}
+  ${({ theme }) =>
+    boxShadow(theme.components.shadow1, theme.components.shadow2)}
   &:active {
-    box-shadow: 0.5vmin 0.5vmin 1vmin #c8d0e7 inset,
-      -0.5vmin -0.5vmin 1vmin #ffffff inset;
+    ${({ theme }) =>
+      boxShadow(theme.components.shadow1, theme.components.shadow2, true)}
   }
 `;
 
