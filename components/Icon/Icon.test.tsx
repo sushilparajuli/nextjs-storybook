@@ -1,6 +1,6 @@
-import { render, screen } from "@/test-utils";
+import { render } from "@/test-utils";
 import { Icon } from "./Icon";
-describe("Button test cases", () => {
+describe("Icon test cases", () => {
   it("should render", () => {
     const { asFragment } = render(
       <Icon name="Moon" />
