@@ -18,3 +18,22 @@ exports[`Button test cases should render 1`] = `
   </label>
 </DocumentFragment>
 `;
+
+exports[`CheckBox test cases should render 1`] = `
+<DocumentFragment>
+  <label
+    class="css-f0o7h5"
+  >
+    <input
+      id=":r0:"
+      type="checkbox"
+    />
+    <label
+      class="css-lsa8i0"
+      for=":r0:"
+    >
+      ✔
+    </label>
+  </label>
+</DocumentFragment>
+`;
