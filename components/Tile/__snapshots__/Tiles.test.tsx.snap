@@ -1,18 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button test cases should render 1`] = `
-<DocumentFragment>
-  <section
-    class="css-1anqmly"
-  >
-    <h2>
-      This is title
-    </h2>
-    This is content
-  </section>
-</DocumentFragment>
-`;
-
 exports[`Tile test cases should render 1`] = `
 <DocumentFragment>
   <section

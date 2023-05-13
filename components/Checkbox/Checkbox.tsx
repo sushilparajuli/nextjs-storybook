@@ -4,6 +4,7 @@ import { Icon } from "../Icon";
 import { boxShadow, transition } from "../styles";
 
 type Props = {
+    /** onChange callback */
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
