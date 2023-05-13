@@ -2,11 +2,13 @@
 
 exports[`Button test cases should render 1`] = `
 <DocumentFragment>
-  <button
-    class="css-fh4479"
-    color="primary"
+  <section
+    class="css-11642g1"
   >
-    Button
-  </button>
+    <h2>
+      This is title
+    </h2>
+    This is content
+  </section>
 </DocumentFragment>
 `;

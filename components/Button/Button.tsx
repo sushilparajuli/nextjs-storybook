@@ -1,8 +1,8 @@
-import { MouseEvent } from "react";
+import { FC, MouseEvent } from "react";
 import styled from "@emotion/styled";
 import { css, SerializedStyles } from "@emotion/react";
 import { AppTheme } from "@/styles/theme";
-import { boxShadow, transition } from "./styles";
+import { borderRadius, boxShadow, transition } from "@/components/styles";
 export type Color = "primary" | "secondary" | "danger" | "warning";
 
 export type Props = {
@@ -47,7 +47,7 @@ export const Button = styled.button<Props>`
   font-size: 1.6rem;
   width: 15rem;
   height: 4rem;
-  border-radius: 1rem;
+  ${borderRadius()};
   transition: all 0.4s ease;
   ${({ color, theme }) => getColors(theme, color)};
   &:hover {
@@ -65,3 +65,33 @@ export const Button = styled.button<Props>`
 Button.defaultProps = {
   color: "primary",
 };
+
+type DefinedButton = Omit<Props, "color">;
+
+export const PrimaryButton: FC<DefinedButton> = (props) => (
+  <Button
+    color="primary"
+    {...props}
+  />
+);
+
+export const SecondaryButton: FC<DefinedButton> = (props) => (
+  <Button
+    color="secondary"
+    {...props}
+  />
+);
+
+export const DangerButton: FC<DefinedButton> = (props) => (
+  <Button
+    color="danger"
+    {...props}
+  />
+);
+
+export const WarningButton: FC<DefinedButton> = (props) => (
+  <Button
+    color="warning"
+    {...props}
+  />
+);

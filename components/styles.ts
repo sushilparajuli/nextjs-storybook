@@ -12,6 +12,11 @@ export const boxShadow = (
   `;
 };
 
+export const borderRadius = (radius = "1rem") =>
+  css`
+    border-radius: ${radius};
+  `;
+
 export const transition = () =>
   css`
     transition: all 0.4s ease;

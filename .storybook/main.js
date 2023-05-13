@@ -29,10 +29,14 @@ export default {
     "options": {}
   },
   docs: {
-    "docsPage": true
+    enabled: true,
+    defaultName: 'Documentation',
+    //👇 Use only one of the following options to auto-generate documentation
+    autodocs: true,
   },
   features: {
     "emotionAlias": false,
     "interactionsDebugger": true,
   },
+  typescript: { reactDocgen: 'react-docgen-typescript' },
 }
